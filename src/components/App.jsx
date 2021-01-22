@@ -3,10 +3,11 @@ import About from "./About";
 import Shop from "./Shop";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
+import ItemDetail from "./ItemDetail";
 
 function App() {
 	const td = {
-		textDecorationColor: "white"
+		textDecorationColor: "rgb(148, 158, 177)"
 	};
 	return (
 		<Router>
@@ -25,7 +26,8 @@ function App() {
 				<Switch>
 					<Route path="/" exact component={Home} />
 					<Route path="/about" component={About} />
-					<Route path="/shop" component={Shop} />
+					<Route path="/shop" exact component={Shop} />
+					<Route path="/shop/:id" component={ItemDetail} />
 				</Switch>
 			</div>
 		</Router>
